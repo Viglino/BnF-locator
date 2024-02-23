@@ -107,6 +107,7 @@ function bnfSearch(query) {
         img.id = get(r, 'dc:identifier');
         img.title = get(r, 'dc:title');
         img.desc = get(r, 'dc:description', true);
+        img.creator = get(r, 'dc:creator', true);
         img.subject = get(r, 'dc:subject', true);
         img.coverage = get(r, 'dc:coverage', true);
         img.date = get(r, 'dc:date');

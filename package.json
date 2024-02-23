@@ -1,0 +1,24 @@
+{
+  "name": "BnF-locator",
+  "version": "1.0.0",
+  "description": "Localisation de photos de la BnF",
+  "dependencies": {
+    "file-saver": "^2.0.5",
+    "font-awesome": "^4.7.0",
+    "ol": "^8.2.0",
+    "ol-ext": "^4.0.14"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "parcel": "^2.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel ./index.html --dist-dir ./.dist",
+    "build": "parcel build ./index.html --no-source-maps --public-url . --dist-dir ./docs"
+  },
+  "author": {
+    "name": "Jean-Marc Viglino",
+    "url": "https://github.com/Viglino"
+  }
+}

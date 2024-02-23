@@ -30,7 +30,7 @@ const loc = new SearchGeoportail ({
   target: locateDlg.querySelector('.control')
 });
 loc.on('select', function(e){
-  console.log(e)
+  // console.log(e)
   locateDlg.style.display = 'none';
   map.getView().setCenter(e.coordinate);
   if (map.getView().getZoom()<15) map.getView().setZoom(15);

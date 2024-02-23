@@ -29,8 +29,8 @@ function getStyle (color, radius) {
 // Layer for the bnf features
 const vector = new VectorLayer({
   title: 'BnF',
-  source: new VectorSource() ,
-  style: getStyle()
+  source: new VectorSource({ attributions: 'Photographies &copy; BnF' }) ,
+  style: getStyle(),
 });
 map.addLayer(vector);
 

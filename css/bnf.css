@@ -301,8 +301,11 @@ body {
 .ol-control button {
   margin: 0;
   background-color: #369;
-  color: #fff;
+  color: #eee;
   border-radius: 0; 
+}
+#map .ol-control button:hover {
+  color: #fff;
 }
 
 .ol-zoom {

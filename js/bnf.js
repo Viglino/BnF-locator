@@ -77,7 +77,7 @@ function bnfSearch(query) {
       function get(node, what, all) {
         const n = node.getElementsByTagName(what);
         if (!n || !n.length) {
-          console.log(what, node);
+          // console.log(what, node);
           return '';
         }
         if (all) {
@@ -102,7 +102,6 @@ function bnfSearch(query) {
       // Get all records
       const rec = xml.getElementsByTagName('srw:records')[0].getElementsByTagName('srw:record');
       for (let i=0, r; r = rec[i]; i++) {
-        console.log(r)
         var img = {};
         img.id = get(r, 'dc:identifier');
         img.title = get(r, 'dc:title');

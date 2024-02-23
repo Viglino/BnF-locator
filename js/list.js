@@ -70,7 +70,7 @@ const container = {
     ul.querySelectorAll('li').forEach((li) => {
       if (li['data-record'].id===id) {
         record = li['data-record'];
-        console.log('found')
+        // console.log('found')
         var sel = ul.querySelector('.visible');
         if (sel) sel.className = '';
         li.className = 'visible';

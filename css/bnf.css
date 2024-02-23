@@ -290,7 +290,18 @@ body {
   width: 100%;
   text-align: center;
   background: rgba(0,0,0,0.5);
-  padding: 0 0.5em;
+  padding: .5em;
+}
+#slide a {
+  color: #fff;
+  margin: 0 .5em;
+}
+#slide a:before {
+  content: '- '
+}
+#slide a:after {
+  content: ' \f08e';
+  font-family: FOntAwesome;
 }
 
 .ol-control {

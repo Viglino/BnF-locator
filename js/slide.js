@@ -10,9 +10,15 @@ function showSlide(rec) {
     src: rec.thumb.replace(/thumbnail$/, "highres"),
     parent: slide
   });
-  element.create('P', {
+  const content = element.create('P', {
     html: rec.title+"<br/>"+rec.desc+"<br/>"+rec.type,
     parent: slide
+  });
+  element.create('A', {
+    text: 'Voir sur Gallica',
+    href: rec.id,
+    target: 'gallica',
+    parent: content
   });
   slide.style.display = 'block';
   setTimeout (function() { slide.className = "visible"; }, 100);

@@ -7,9 +7,12 @@ import SearchGeoportail from 'ol-ext/control/SearchGeoportail'
 import config from './config'
 import vector from './vector'
 import map from './map'
+import dialog from './dialog'
+
+console.log('config: ', config)
 
 // Download features as GeoJSON
-document.querySelectorAll('#search .fa-download')[0].addEventListener ('click', () => {
+document.querySelector('#search .fa-download').addEventListener ('click', () => {
   const features =  vector.getSource().getFeatures();
   if (features.length) {
     const s = (new GeoJSON()).writeFeatures( features, {
@@ -20,6 +23,19 @@ document.querySelectorAll('#search .fa-download')[0].addEventListener ('click', 
     const blob = new Blob([s], { type: "text/plain;charset=utf-8" });
     saveAs(blob, "bnf.geojson");
   }
+});
+
+// Options
+document.querySelector('#search .fa-list-ul').addEventListener ('click', () => {
+  dialog.show('<h2>Options</h2><ul><li><label>Proxy: <input class="proxy" type="text"/></label></li></ul><a class="ok">OK</a>')
+  const proxy = dialog.getElement().querySelector('input.proxy')
+  proxy.value = config.proxy;
+  // OK
+  dialog.getElement().querySelector('a.ok').addEventListener('click', () => {
+    config.proxy = proxy.value;
+    dialog.hide()
+    console.log(config)
+  })
 });
 
 // New search control on the 
